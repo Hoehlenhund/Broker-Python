@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <div class="calculation">
+        <span id="value_a">{{a}}</span> +
+        <span id="value_b">{{b}}</span> =
+        <span id="result"></span>
+    </div>
+</body>
+
+</html>
+
+<footer>
+
+    <script>
+        function addValues() {
+            const resultElement = document.getElementById("result");
+            const aValueElement = document.getElementById("value_a").innerText;
+            const bValueElement = document.getElementById("value_b").innerText;
+
+            const sum = parseFloat(aValueElement) + parseFloat(bValueElement);
+            resultElement.innerText = sum;
+        }
+
+        addValues();
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .calculation {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .value {
+            display: inline-block;
+            margin: 0 5px;
+            color: #666;
+        }
+
+        #result {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</footer>
